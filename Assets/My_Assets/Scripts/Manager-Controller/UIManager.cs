@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class UIManager : MonoBehaviour
+{
+
+    [SerializeField]
+    private int money;
+
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
+    [SerializeField]
+    void Awake()
+    {
+        SaveMoney(100);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        Debug.Log("Player Money: " + LoadMoney());
+        moneyText.text = LoadMoney().ToString();
+        //MoneySpendUpdate(LoadMoney());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private int LoadMoney()
+    {
+        if (PlayerPrefs.HasKey("money"))
+        {
+            money = PlayerPrefs.GetInt("money");
+        }
+        return money;
+    }
+    public void SaveMoney(int amount)
+    {
+        PlayerPrefs.SetInt("money", amount);
+    }
+
+    private string ScoreShow(double Score)
+    {
+        string result;
+        string[] ScoreNames = new string[] { "", "k", "M", "B", "T", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az", "ba", "bb", "bc", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bk", "bl", "bm", "bn", "bo", "bp", "bq", "br", "bs", "bt", "bu", "bv", "bw", "bx", "by", "bz", };
+        int i;
+
+        for (i = 0; i < ScoreNames.Length; i++)
+            if (Score < 900)
+                break;
+            else Score = System.Math.Floor(Score / 100f) / 10f;
+
+        if (Score == System.Math.Floor(Score))
+            result = Score.ToString() + ScoreNames[i];
+        else result = Score.ToString("F1") + ScoreNames[i];
+        return result;
+    }
+
+    public void MoneySpendUpdate(int spendmoney)
+    {
+        int currentMoney = LoadMoney();
+
+        currentMoney = currentMoney - spendmoney;
+        moneyText.text = ScoreShow(currentMoney).ToString();
+
+        // Optionally, save the updated money back to PlayerPrefs if necessary
+        //SaveMoney(currentMoney);
+    }
+    public void AddProfit(int profit)
+    {
+        money += profit;
+        moneyText.text = ScoreShow(money);
+        SaveMoney(money); // Optional: save updated money back to PlayerPrefs
+    }
+}
