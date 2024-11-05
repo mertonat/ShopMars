@@ -69,7 +69,11 @@ public class CaseManager : MonoBehaviour
         Agent currentAgent = currentQueueIndexCase[0].GetComponent<Agent>();
         yield return MoveAgentToQueuePosition(currentAgent, agentQueuePos[0]);
         item.SetParent(itemPackPos);
-        yield return MoveObject(item, itemPackPos.position, itemPackPos.rotation);
+        Quaternion rotation = item.name.Contains("Ship")
+      ? Quaternion.Euler(-90, 90, 0)
+      : itemPackPos.rotation;
+
+        yield return MoveObject(item, itemPackPos.position, rotation);
 
         // Wait for a short duration before destroying the item
         yield return new WaitForSeconds(0.1f); // Wait for 0.1 seconds

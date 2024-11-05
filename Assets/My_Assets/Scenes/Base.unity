@@ -1058,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63093250
@@ -3120,7 +3120,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225957985}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3129,7 +3129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225957987
@@ -4678,7 +4678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 320
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5773,7 +5773,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385527833}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5782,7 +5782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385527835
@@ -6364,7 +6364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6745,7 +6745,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406857522}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6754,7 +6754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406857524
@@ -7210,7 +7210,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429800745}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7219,7 +7219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429800747
@@ -7760,7 +7760,7 @@ MonoBehaviour:
   amountText: {fileID: 781981301}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 160
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -9403,7 +9403,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590335375}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9412,7 +9412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590335377
@@ -10490,7 +10490,7 @@ MonoBehaviour:
   amountText: {fileID: 1779758176}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 600
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -13490,7 +13490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 160
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14354,7 +14354,7 @@ MonoBehaviour:
   amountText: {fileID: 393711319}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 600
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -15304,7 +15304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 520
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19514,7 +19514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 420
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19676,7 +19676,7 @@ PrefabInstance:
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
@@ -20500,7 +20500,7 @@ MonoBehaviour:
   amountText: {fileID: 329256855}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 320
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -21927,7 +21927,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279820160}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21936,7 +21936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279820162
@@ -23548,7 +23548,7 @@ MonoBehaviour:
   amountText: {fileID: 1874485975}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 340
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -27947,7 +27947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 150
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28091,7 +28091,7 @@ MonoBehaviour:
   amountText: {fileID: 1131472780}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 420
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -29055,7 +29055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 750
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30254,7 +30254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30793,7 +30793,7 @@ PrefabInstance:
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
@@ -31268,7 +31268,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825451396}
   m_LocalRotation: {x: 0.0000007189811, y: -0.0000004768372, z: 0.5849011, w: 0.81110466}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5707, y: 0.5707, z: 0.5707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31277,7 +31277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 71.592}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: -19}
+  m_AnchoredPosition: {x: 3.3, y: -21.6}
   m_SizeDelta: {x: 88.13, y: 88.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825451398
@@ -31553,7 +31553,7 @@ MonoBehaviour:
   amountText: {fileID: 1640111195}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 150
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -31964,7 +31964,7 @@ PrefabInstance:
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7539686884490181761, guid: 99c53c041c7152443a4c446e2d8168fc,
         type: 3}
@@ -32285,7 +32285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 340
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33952,7 +33952,7 @@ MonoBehaviour:
   amountText: {fileID: 851815400}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 520
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -35245,7 +35245,7 @@ MonoBehaviour:
   amountText: {fileID: 1701899362}
   startTimer: 0.15
   mnyTimer: 0.25
-  price: 80
+  price: 750
   amountPaid: 0
   decreaseAmount: 1
   moneyActor: {fileID: 8650783168234678757, guid: 37250bd28b318064bb9baaee25e269da,
@@ -38980,7 +38980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3022969978170816767
 GameObject:
   m_ObjectHideFlags: 0
@@ -38998,7 +38998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3022969978242507692
 GameObject:
   m_ObjectHideFlags: 0
@@ -39016,7 +39016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3022969978828733293
 GameObject:
   m_ObjectHideFlags: 0
@@ -39034,7 +39034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3022969978916944486
 GameObject:
   m_ObjectHideFlags: 0
@@ -39052,7 +39052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3022969979142289821
 GameObject:
   m_ObjectHideFlags: 0
@@ -39070,7 +39070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &3208273699427072268
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -18,9 +18,9 @@ public class BaseCharControl : MonoBehaviour
     Vector3 moveDirection;
     Vector3 targetDirection;
 
-
+    float walkspeed = 0.6f;
     [SerializeField] private Animator _animator;
-   
+
 
     // Start is called before the first frame update
     private void FixedUpdate()
@@ -30,7 +30,7 @@ public class BaseCharControl : MonoBehaviour
     }
     void Start()
     {
-    
+
     }
 
     // Update is called once per frame
@@ -51,8 +51,8 @@ public class BaseCharControl : MonoBehaviour
 
         _characterController.transform.rotation = Quaternion.LookRotation(targetDirection);
 
-        float currentSpeed = _characterController.velocity.magnitude / moveSpeed ;
-    
+        float currentSpeed = _characterController.velocity.magnitude / moveSpeed;
+
         if (moveDirection.sqrMagnitude <= 0)
         {
             _animator.SetBool("Running", false);
@@ -63,7 +63,7 @@ public class BaseCharControl : MonoBehaviour
         {
             bool isRunning = _animator.GetCurrentAnimatorStateInfo(0).IsName("RunForward");
             if (currentSpeed >= 0.5f)
-            {   
+            {
                 _animator.SetBool("Idle", false);
                 _animator.SetBool("Walking", false);
                 _animator.SetBool("Running", true);
@@ -72,17 +72,19 @@ public class BaseCharControl : MonoBehaviour
             }
             else if (moveDirection.sqrMagnitude != 0 || currentSpeed <= 0.5)
             {
-                _animator.SetBool("Walking", true);
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("Running", false);
 
-            } 
+                _animator.SetBool("Running", false);
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("Walking", true);
+                _animator.SetFloat("WalkSpeed", walkspeed);
+
+            }
         }
     }
-    
+
     public void PlayerCarryAnimation(bool isCarry)
     {
-        _animator.SetBool("Carry",isCarry);
+        _animator.SetBool("Carry", isCarry);
     }
 
 }

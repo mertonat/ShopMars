@@ -25,11 +25,14 @@ public class StoreShelfController : MonoBehaviour
     public string itemName;
 
     public GameObject StoreActor;
+
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         GetItemsList();
         ItemsListUpdate(items);
         PopulateQueuePositions();
+
     }
 
     void Update()

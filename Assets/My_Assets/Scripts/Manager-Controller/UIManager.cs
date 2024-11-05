@@ -14,7 +14,12 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     void Awake()
     {
-        SaveMoney(100);
+        if (PlayerPrefs.GetInt("HasRunBefore", 0) == 0) // Check if this is the first run
+        {
+            SaveMoney(80); // Save money only once
+            PlayerPrefs.SetInt("HasRunBefore", 1); // Set the flag to indicate this has run
+            PlayerPrefs.Save(); // Save changes to PlayerPrefs
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -42,6 +47,7 @@ public class UIManager : MonoBehaviour
     public void SaveMoney(int amount)
     {
         PlayerPrefs.SetInt("money", amount);
+        PlayerPrefs.Save();
     }
 
     private string ScoreShow(double Score)
