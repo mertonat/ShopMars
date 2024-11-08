@@ -28,7 +28,7 @@ public class StoreShelfController : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
         GetItemsList();
         ItemsListUpdate(items);
         PopulateQueuePositions();

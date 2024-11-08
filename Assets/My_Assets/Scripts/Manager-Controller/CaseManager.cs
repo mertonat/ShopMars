@@ -28,12 +28,18 @@ public class CaseManager : MonoBehaviour
     public bool isPayment;
     private bool readOnce;
     private bool packageInstantiated;
+    [SerializeField] private GameObject caseWorkerUI;
+    [SerializeField] private GameObject casePlayerUI;
+    [SerializeField] private GameObject worker;
+    bool isworkerActive;
+    [SerializeField] private int caseId;
     // Start is called before the first frame update
     private void Start()
     {
         InitializeDigitalFrame();
         // _caseMoneyActor = transform.GetChild(2).GetComponent<CaseMoneyActor>();
         PopulateQueuePositions();
+        ActivateWorker();
     }
 
     private void Update()
@@ -65,6 +71,13 @@ public class CaseManager : MonoBehaviour
             Debug.LogWarning("Invalid item or no agents in queue.");
             yield break;
         }
+        // Check if the worker is active and set the "Payment" animation to true
+        if (isworkerActive && workerAnimator != null)
+        {
+            workerAnimator.SetBool("Payment", true); // Set Payment animation to true
+            workerAnimator.SetBool("Idle", false); // Set Idle animation to false (if needed)
+        }
+
         itemType = GetItemTypeFromName(item.name);
         Agent currentAgent = currentQueueIndexCase[0].GetComponent<Agent>();
         yield return MoveAgentToQueuePosition(currentAgent, agentQueuePos[0]);
@@ -83,7 +96,7 @@ public class CaseManager : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
-
+        
         // Start preparing the package after the item is destroyed
         StartCoroutine(PackageGettingReady());
     }
@@ -139,7 +152,12 @@ public class CaseManager : MonoBehaviour
         instantiatedPackage.transform.localScale = Vector3.one;
         instantiatedPackage.transform.localPosition = Vector3.zero;
         instantiatedPackage.transform.localRotation = Quaternion.identity;
-
+        // After package transfer, reset to "Idle" animation
+        if (isworkerActive && workerAnimator != null)
+        {
+            workerAnimator.SetBool("Payment", false); // Set Payment animation to false
+            workerAnimator.SetBool("Idle", true); // Set Idle animation to true
+        }
         CompleteTransaction(agent);
     }
     public Vector3 rotate = new Vector3(0, 180, 0);
@@ -327,6 +345,30 @@ public class CaseManager : MonoBehaviour
         else
         {
             totalProfit = 0;
+        }
+    }
+
+    [SerializeField] private Animator workerAnimator;
+    public void ActivateWorker()
+    {
+        // Retrieve the worker ID, assuming it’s stored or accessible here
+        int workerId = caseId;
+
+        // Check if this worker has been paid
+        bool isPaid = PlayerPrefs.GetInt("caseWorkerPaid" + workerId, 0) == 1;
+
+        if (isPaid)
+        {
+            // If the worker has been paid, activate the worker
+            caseWorkerUI.SetActive(false);
+            casePlayerUI.SetActive(false);
+            worker.SetActive(true);
+            isPayment = true;
+            isworkerActive=true;
+        }
+        else
+        {
+            Debug.Log("Worker not paid yet, cannot activate.");
         }
     }
 

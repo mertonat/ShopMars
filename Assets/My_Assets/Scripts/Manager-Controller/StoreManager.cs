@@ -8,7 +8,8 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private StorageManager _StorageManager;
     [SerializeField] private AgentManager _AgentManager;
     [SerializeField] private GaragaManager _GaragaManager;
-
+    [SerializeField] private GameObject iuCaseOne;
+    [SerializeField] private GameObject iuCaseTwo;
     [SerializeField] private GameObject[] shelfs;
     [SerializeField] public GameObject[] tables;
     [SerializeField] private GameObject[] uiColliders;
@@ -94,7 +95,6 @@ public class StoreManager : MonoBehaviour
     {
 
     }
-
     public void Unlocked(String name)
     {
         // Only unlock shelves if tutorial is complete or if shelf 0
@@ -125,12 +125,27 @@ public class StoreManager : MonoBehaviour
 
             // Special condition: if table 3 (shelf index 3) is unlocked, activate the garage UI
             bool isGarageUnlocked = PlayerPrefs.GetInt("GarageUnlocked", 0) == 1;
-            if (i == 3 && count[i] && _GaragaManager != null&&!isGarageUnlocked)
+            if (i == 3 && count[i] && _GaragaManager != null && !isGarageUnlocked)
             {
                 _GaragaManager.ActivateGarageUI(); // Calls the method to activate the garage UI
             }
+            bool paid1 = PlayerPrefs.GetInt("caseWorkerPaid1", 0) == 1; // True if worker 1 is paid
+            Debug.Log($"Checking Worker 1 Payment for Case 1: {paid1}");
+            if (i == 2 && count[i] && !paid1) // If shelf is unlocked and worker 1 is unpaid
+            {
+                Debug.Log($"Activating iuCaseOne for shelf {i}");
+                iuCaseOne.SetActive(true); // Enable iuCaseOne
+            }
+            bool paid2 = PlayerPrefs.GetInt("caseWorkerPaid2", 0) == 1; // True if worker 1 is paid
+            Debug.Log($"Checking Worker 1 Payment for Case 1: {paid2}");
+            if (i == 4 && count[i] && !paid2) // If shelf is unlocked and worker 1 is unpaid
+            {
+                Debug.Log($"Activating iuCaseOne for shelf {i}");
+                iuCaseTwo.SetActive(true); // Enable iuCaseOne
+            }
         }
         DisableUIObject();
+
     }
     public void DisableUIObject()
     {
@@ -191,6 +206,16 @@ public class StoreManager : MonoBehaviour
                 uiColliders[i].SetActive(false);
                 //Debug.Log($"Disabled UI Collider {i}.");
             }
+        }
+        bool paid1 = PlayerPrefs.GetInt("caseWorkerPaid1", 0) == 1;
+        if (paid1) // If shelf is unlocked and worker 1 is unpaid
+        {
+            iuCaseOne.SetActive(false);
+        }
+        bool paid2 = PlayerPrefs.GetInt("caseWorkerPaid2", 0) == 1;
+        if (paid2) // If shelf is unlocked and worker 1 is unpaid
+        {
+            iuCaseTwo.SetActive(false);
         }
     }
     public List<GameObject> GetActiveTables()

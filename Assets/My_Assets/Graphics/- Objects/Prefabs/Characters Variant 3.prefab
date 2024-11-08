@@ -5,21 +5,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8007727490004144, guid: f32d00fef62acb2429f2b5272fe75af6, type: 3}
       propertyPath: m_Name
-      value: Characters Variant 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 661914616825998809, guid: f32d00fef62acb2429f2b5272fe75af6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 817300325140508170, guid: f32d00fef62acb2429f2b5272fe75af6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      value: Characters Variant 3
       objectReference: {fileID: 0}
     - target: {fileID: 817300325140508170, guid: f32d00fef62acb2429f2b5272fe75af6,
         type: 3}
@@ -71,15 +62,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4458498479079475926, guid: f32d00fef62acb2429f2b5272fe75af6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467751140205639477, guid: f32d00fef62acb2429f2b5272fe75af6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f32d00fef62acb2429f2b5272fe75af6, type: 3}

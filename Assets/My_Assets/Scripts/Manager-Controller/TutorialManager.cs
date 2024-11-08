@@ -39,9 +39,10 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private float distanceTo = 3f;
 
     private const string TutorialStepKey = "TutorialStep";
-
+    public bool a;
     void Start()
     {
+        a= PlayerPrefs.GetInt(TutorialCompleteKey, 0)==1;
         _storeManager = GetComponent<StoreManager>();
         // Make sure all arrows are initially deactivated
         DeactivateAllArrows();

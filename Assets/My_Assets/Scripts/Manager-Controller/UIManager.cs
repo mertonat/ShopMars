@@ -11,9 +11,12 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI moneyText;
-    [SerializeField]
+    [SerializeField] bool a;
     void Awake()
     {
+        //PlayerPrefs.DeleteAll();
+       
+        a = PlayerPrefs.GetInt("HasRunBefore", 0) == 1;
         if (PlayerPrefs.GetInt("HasRunBefore", 0) == 0) // Check if this is the first run
         {
             SaveMoney(80); // Save money only once
@@ -33,7 +36,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        print(PlayerPrefs.GetInt("money")+"Load Money " +LoadMoney());
     }
 
     private int LoadMoney()
