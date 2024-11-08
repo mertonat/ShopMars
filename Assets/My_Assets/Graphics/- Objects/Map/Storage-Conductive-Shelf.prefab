@@ -23,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699246769319968}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -30,7 +31,6 @@ Transform:
   m_Children:
   - {fileID: 8556699247088521600}
   m_Father: {fileID: 8157489918909910998}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8556699246987083630
 GameObject:
@@ -55,22 +55,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699246987083630}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7968124196591048993}
-  - {fileID: 7968124195449379935}
   - {fileID: 7968124195724497194}
-  - {fileID: 7968124196536354092}
-  - {fileID: 7968124195756214936}
+  - {fileID: 7968124195449379935}
+  - {fileID: 7968124196591048993}
   - {fileID: 7968124194898375512}
-  - {fileID: 7968124196856117332}
-  - {fileID: 7968124196472815568}
+  - {fileID: 7968124195756214936}
+  - {fileID: 7968124196536354092}
   - {fileID: 7968124196213963715}
+  - {fileID: 7968124196472815568}
+  - {fileID: 7968124196856117332}
   m_Father: {fileID: 8157489918909910998}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8556699247088521603
 GameObject:
@@ -100,13 +100,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699247088521603}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1.9587395, y: 0.14, z: 0.7796199}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8556699246769319969}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8556699247088521605
 MeshFilter:
@@ -166,9 +166,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699247088521603}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -180,9 +188,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699247088521603}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 1.9999999}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8556699247088521626
@@ -226,6 +242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556699247456677000}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 19, y: 3.2264729, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -233,7 +250,6 @@ Transform:
   m_Children:
   - {fileID: 8157489918909910998}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &8556699247456677006
 MonoBehaviour:
@@ -287,6 +303,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8826748990994568556}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 6.560848, y: -3.1364727, z: 3.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -295,7 +312,6 @@ Transform:
   - {fileID: 8556699246987083631}
   - {fileID: 8556699246769319969}
   m_Father: {fileID: 8556699247456677001}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &5087627532991955059
 MeshFilter:
@@ -355,9 +371,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8826748990994568556}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2304450353110763150, guid: 7bd9fc4c40212f34ca48d3e5e272b8e0, type: 3}
@@ -366,12 +390,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (17)
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -434,6 +459,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124195724497194 stripped
 Transform:
@@ -446,12 +474,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (13)
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -514,6 +543,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124195756214936 stripped
 Transform:
@@ -526,12 +558,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (16)
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -594,6 +627,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124195449379935 stripped
 Transform:
@@ -606,12 +642,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (14)
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -674,6 +711,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124194898375512 stripped
 Transform:
@@ -686,12 +726,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (9)
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -754,6 +795,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124196856117332 stripped
 Transform:
@@ -766,12 +810,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (10)
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -834,6 +879,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124196472815568 stripped
 Transform:
@@ -846,12 +894,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (12)
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -914,6 +963,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124196536354092 stripped
 Transform:
@@ -926,12 +978,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (15)
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -994,6 +1047,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124196591048993 stripped
 Transform:
@@ -1006,12 +1062,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8556699246987083631}
     m_Modifications:
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
       propertyPath: m_Name
-      value: conductive-wire (11)
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1741756281864241290, guid: 849656a45513e3749a42846e4584d787,
         type: 3}
@@ -1074,6 +1131,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849656a45513e3749a42846e4584d787, type: 3}
 --- !u!4 &7968124196213963715 stripped
 Transform:
