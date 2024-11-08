@@ -32,6 +32,8 @@ public class StorageManager : MonoBehaviour
 
     void Awake()
     {
+        TinySauce.OnGameStarted("Shop");
+   
         InitializeStorageControllers();
         _StoreManager = GetComponent<StoreManager>();
         if (_StoreManager == null)

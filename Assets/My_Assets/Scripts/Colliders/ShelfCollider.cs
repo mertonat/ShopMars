@@ -80,12 +80,21 @@ public class ShelfCollider : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
             scalingUp = false;
             _StoreShelfController.canTableTransfer = false;
+            _StoreShelfController.isMovingItem = false; // Reset moving flag
             _StoreShelfController.currentMovingIndex = 0;
             _StoreShelfController.ItemsListUpdate(_StoreShelfController.items);
+
+            // If an item is stuck in mid-air, make sure to destroy it or reset its position
+            if (_StoreShelfController.currentItem != null)
+            {
+                Destroy(_StoreShelfController.currentItem);
+                _StoreShelfController.currentItem = null;
+            }
         }
     }
 

@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         //PlayerPrefs.DeleteAll();
-       
+
         a = PlayerPrefs.GetInt("HasRunBefore", 0) == 1;
         if (PlayerPrefs.GetInt("HasRunBefore", 0) == 0) // Check if this is the first run
         {
@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.SetInt("HasRunBefore", 1); // Set the flag to indicate this has run
             PlayerPrefs.Save(); // Save changes to PlayerPrefs
         }
+        SaveMoney(800);
     }
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(PlayerPrefs.GetInt("money")+"Load Money " +LoadMoney());
+        print(PlayerPrefs.GetInt("money") + "Load Money " + LoadMoney());
     }
 
     private int LoadMoney()

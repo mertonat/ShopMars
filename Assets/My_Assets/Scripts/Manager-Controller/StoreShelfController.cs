@@ -28,7 +28,7 @@ public class StoreShelfController : MonoBehaviour
 
     void Start()
     {
-       // PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         GetItemsList();
         ItemsListUpdate(items);
         PopulateQueuePositions();
@@ -85,9 +85,9 @@ public class StoreShelfController : MonoBehaviour
 
     private void MoveItemToInactive(GameObject selectedItem)
     {
-        // Check if there are any inactive items left to move
         if (itemsMoved >= inActiveItems.Length)
         {
+            // Reset moving status and index if all items are moved
             isMovingItem = false;
             currentItem = null;
             ItemsListUpdate(items);
@@ -98,9 +98,8 @@ public class StoreShelfController : MonoBehaviour
         int countActive = inActiveItems.Length;
         if (countActive > 0)
         {
-
             inactivePosition = items[inActiveItems[itemsMoved]].transform;
-            Vector3 worldTargetPosition = items[inActiveItems[itemsMoved]].transform.position;
+            Vector3 worldTargetPosition = inactivePosition.position;
             float moveSpeed = 1.0f / moveDuration;
 
             selectedItem.transform.position = Vector3.Lerp(selectedItem.transform.position, worldTargetPosition, moveSpeed * Time.deltaTime);
@@ -122,13 +121,14 @@ public class StoreShelfController : MonoBehaviour
             Debug.Log("No active items to move.");
         }
 
+        // Reset item if player carries none or all inactive items are moved
         if (_PlayerStack.carryingAmount == 0 || itemsMoved >= inActiveItems.Length)
         {
-            //Debug.Log("Resetting after all items have been moved or carrying amount is 0.");
             ItemsListUpdate(items);
             currentMovingIndex = 0;
-            itemsMoved = 0; // Reset the itemsMoved counter
+            itemsMoved = 0;
             _PlayerStack.PlayerCarryAnimation(false);
+
             if (_PlayerStack.carryingAmount == 0)
             {
                 _PlayerStack.itemName = "";

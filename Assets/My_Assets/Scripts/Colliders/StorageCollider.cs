@@ -90,6 +90,11 @@ public class StorageCollider : MonoBehaviour
         {
             scalingUp = false;
             _StoreShelf.canTableTransfer = false;
+            if (_PlayerStackController.carryingAmount == 0)
+            {
+                _PlayerStackController.itemName = "";  // Clear item name
+                _PlayerStackController.isCarry = false; // Mark as not carrying anything
+            }
         }
     }
 

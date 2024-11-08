@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa11ec82e9746928e211e7f096812ca, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  gameAnalyticsIosGameKey: 
-  gameAnalyticsIosSecretKey: 
+  gameAnalyticsIosGameKey: 0769a99a057d006abe90446896c8939b
+  gameAnalyticsIosSecretKey: 867937723e8538125678c7048aefee9f553fe0cd
   gameAnalyticsAndroidGameKey: 
   gameAnalyticsAndroidSecretKey: 
-  facebookAppId: 
-  facebookClientToken: 
-  adjustIOSToken: 
+  facebookAppId: 1270242107353629
+  facebookClientToken: 2ae2d3eb4a892f07cad17110aac8ca30
+  adjustIOSToken: i0jfcbbis1ds
   adjustAndroidToken: 
-  EditorIdfa: 
+  EditorIdfa: da4c62b7-44ee-4e19-888f-957f7dd7f96c
   UseRemoteConfig: 0
   UseVoodooAnalytics: 1
-  companyName: 
-  privacyPolicyURL: 
-  developerContactEmail: 
+  companyName: MertOnat
+  privacyPolicyURL: https://sites.google.com/view/planetshop-privacy-policy/ana-sayfa
+  developerContactEmail: mert.onat1@gmail.com
