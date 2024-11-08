@@ -11,7 +11,7 @@ using JetBrains.Annotations;
 public class BaseCharControl : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private FloatingJoystick joystick;
 
     [SerializeField] public float moveSpeed;
     [SerializeField] private float rotationSpeed;
