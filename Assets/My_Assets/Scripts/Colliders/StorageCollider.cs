@@ -75,29 +75,67 @@ public class StorageCollider : MonoBehaviour
             }
         }
     }
+    private bool isExiting = false;
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //Debug.Log("Player is still inside the BoxCollider.");
-        }
-    }
-
+    // Method that triggers on exit
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isExiting)
         {
+            isExiting = true;
             scalingUp = false;
             _StoreShelf.canTableTransfer = false;
-            if (_PlayerStackController.carryingAmount == 0)
-            {
-                _PlayerStackController.itemName = "";  // Clear item name
-                _PlayerStackController.isCarry = false; // Mark as not carrying anything
-            }
+
+            // Start the delayed check for the player's stack
+            StartCoroutine(CheckPlayerStackAfterDelay(0.2f));
+
+            isExiting = false;
         }
     }
 
+    // Coroutine to wait and then check the stack
+    private IEnumerator CheckPlayerStackAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (_PlayerStackController.frontStack.transform.childCount > 0)
+        {
+            // Get the last item in the player's stack without removing it
+            Transform lastChild = _PlayerStackController.frontStack.transform.GetChild(
+                _PlayerStackController.frontStack.transform.childCount - 1
+            );
+            GameObject lastItem = lastChild.gameObject;
+
+            // Check if the item is one of the known types and update itemName
+            if (lastItem != null)
+            {
+                string lastItemName = lastItem.name;
+
+                if (lastItemName.Contains("gearActor"))
+                {
+                    _PlayerStackController.itemName = "Gear";
+                }
+                else if (lastItemName.Contains("circuitActor"))
+                {
+                    _PlayerStackController.itemName = "Circuit";
+                }
+                else if (lastItemName.Contains("conductiveActor"))
+                {
+                    _PlayerStackController.itemName = "Conductive";
+                }
+                else
+                {
+                    Debug.LogWarning("Unknown item type in player stack.");
+                    _PlayerStackController.itemName = ""; // Reset if unknown
+                }
+            }
+        }
+        else
+        {
+            _PlayerStackController.itemName = ""; // No items in stack, reset name
+            _PlayerStackController.isCarry = false;
+        }
+    }
     private void ScaleObject(Vector3 target)
     {
         transform.localScale = Vector3.Lerp(transform.localScale, target, lerpSpeed * Time.deltaTime);

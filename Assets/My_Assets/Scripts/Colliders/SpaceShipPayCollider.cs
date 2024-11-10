@@ -26,6 +26,9 @@ public class SpaceShipPayCollider : MonoBehaviour
 
     public GameObject moneyActor;
     public string heliPadName;
+
+    private string paymentKey;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +53,8 @@ public class SpaceShipPayCollider : MonoBehaviour
         {
             Debug.LogError("GameObject with tag 'UIroot' not found.");
         }
-
+        paymentKey = "amountPaid_" + gameObject.name;
+        LoadPaymentData();
     }
 
     // Update is called once per frame
@@ -124,6 +128,7 @@ public class SpaceShipPayCollider : MonoBehaviour
             fillImage.fillAmount = (float)amountPaid / initialPrice;
             PlayerPrefs.SetInt("money", playerMoney);
             decreaseAmount++;
+            SavePaymentData();
 
             if (timeMny <= 0)
             {
@@ -157,14 +162,29 @@ public class SpaceShipPayCollider : MonoBehaviour
         // _StoreManager.LoadShelfState();
         //isTutorial = true;  
     }
+
     private int GetPlayerTotalMoney()
     {
         return PlayerPrefs.GetInt("money");
     }
+    
     bool isTutorial;
     public bool IsUnlocked()
     {
         return isTutorial;
     }
 
+    private void SavePaymentData()
+    {
+        PlayerPrefs.SetInt(paymentKey, amountPaid);
+    }
+
+    private void LoadPaymentData()
+    {
+        // Load previously paid amount and adjust remaining price
+        amountPaid = PlayerPrefs.GetInt(paymentKey, 0);
+        price = Mathf.Max(0, initialPrice - amountPaid); // Adjust the remaining amount
+        amountText.text = price.ToString();
+        fillImage.fillAmount = (float)amountPaid / initialPrice;
+    }
 }

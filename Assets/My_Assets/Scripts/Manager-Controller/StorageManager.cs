@@ -33,13 +33,17 @@ public class StorageManager : MonoBehaviour
     void Awake()
     {
         TinySauce.OnGameStarted("Shop");
-   
+
         InitializeStorageControllers();
         _StoreManager = GetComponent<StoreManager>();
         if (_StoreManager == null)
         {
             Debug.LogError("StoreManager component is missing.");
         }
+    }
+    void Start()
+    {
+        Application.targetFrameRate = 60;
     }
     bool CargoFlag;
     void Update()
@@ -79,7 +83,6 @@ public class StorageManager : MonoBehaviour
     }
 
     #region Initialization
-
     private void InitializeStorageControllers()
     {
         _StorageShelfController = new StorageShelfController[storageShelfs.Length];

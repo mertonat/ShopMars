@@ -26,7 +26,7 @@ public class GaragePayCollider : MonoBehaviour
 
     public GameObject moneyActor;
     //public GameObject table;
-
+    private string paymentKey;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +51,8 @@ public class GaragePayCollider : MonoBehaviour
         {
             Debug.LogError("GameObject with tag 'UIroot' not found.");
         }
+        paymentKey = "amountPaid_" + gameObject.name;
+        LoadPaymentData();
 
     }
 
@@ -126,7 +128,7 @@ public class GaragePayCollider : MonoBehaviour
             fillImage.fillAmount = (float)amountPaid / initialPrice;
             PlayerPrefs.SetInt("money", playerMoney);
             decreaseAmount++;
-
+            SavePaymentData();
             if (timeMny <= 0)
             {
                 CreateMoney();
@@ -156,9 +158,9 @@ public class GaragePayCollider : MonoBehaviour
         PlayerPrefs.SetInt("GarageUnlocked", 1); // 1 means unlocked, 0 means locked
         PlayerPrefs.Save();
 
-      
+
         _GaragaManager.SetGarageActive();
-    
+
     }
     private int GetPlayerTotalMoney()
     {
@@ -168,5 +170,18 @@ public class GaragePayCollider : MonoBehaviour
     public bool IsUnlocked()
     {
         return isTutorial;
+    }
+    private void SavePaymentData()
+    {
+        PlayerPrefs.SetInt(paymentKey, amountPaid);
+    }
+
+    private void LoadPaymentData()
+    {
+        // Load previously paid amount and adjust remaining price
+        amountPaid = PlayerPrefs.GetInt(paymentKey, 0);
+        price = Mathf.Max(0, initialPrice - amountPaid); // Adjust the remaining amount
+        amountText.text = price.ToString();
+        fillImage.fillAmount = (float)amountPaid / initialPrice;
     }
 }

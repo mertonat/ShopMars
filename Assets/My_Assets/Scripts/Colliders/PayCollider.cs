@@ -26,6 +26,8 @@ public class PayCollider : MonoBehaviour
     public GameObject moneyActor;
     public GameObject table;
 
+    private string paymentKey;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,8 @@ public class PayCollider : MonoBehaviour
         {
             Debug.LogError("GameObject with tag 'UIroot' not found.");
         }
-
+        paymentKey = "amountPaid_" + gameObject.transform.parent.name;
+        LoadPaymentData();
     }
 
     // Update is called once per frame
@@ -124,7 +127,7 @@ public class PayCollider : MonoBehaviour
             fillImage.fillAmount = (float)amountPaid / initialPrice;
             PlayerPrefs.SetInt("money", playerMoney);
             decreaseAmount++;
-
+            SavePaymentData();
             if (timeMny <= 0)
             {
                 CreateMoney();
@@ -165,5 +168,15 @@ public class PayCollider : MonoBehaviour
     {
         return isTutorial;
     }
-
+    private void SavePaymentData()
+    {
+        PlayerPrefs.SetInt(paymentKey, amountPaid);
+    }
+    private void LoadPaymentData()
+    {
+        amountPaid = PlayerPrefs.GetInt(paymentKey, 0);
+        price -= amountPaid;
+        amountText.text = price.ToString();
+        fillImage.fillAmount = (float)amountPaid / initialPrice;
+    }
 }

@@ -19,7 +19,7 @@ TagManager:
   - StorageDoor
   - CargoMan
   - Managers
-  - 
+  - NavMeshAgentLayer
   - 
   - 
   - 

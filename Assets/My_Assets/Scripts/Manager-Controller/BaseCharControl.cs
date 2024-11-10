@@ -10,8 +10,9 @@ using JetBrains.Annotations;
 
 public class BaseCharControl : MonoBehaviour
 {
+    [SerializeField] private GameObject Finger;
     [SerializeField] private CharacterController _characterController;
-    [SerializeField] private FloatingJoystick joystick;
+    [SerializeField] private VariableJoystick joystick;
 
     [SerializeField] public float moveSpeed;
     [SerializeField] private float rotationSpeed;
@@ -20,65 +21,104 @@ public class BaseCharControl : MonoBehaviour
 
     float walkspeed = 0.6f;
     [SerializeField] private Animator _animator;
-
-
-    // Start is called before the first frame update
-    private void FixedUpdate()
-    {
-        PlayerMove1();
-        //playerMove();
-    }
+    private bool isMoving;
+    private float inactivityTimer = 0f;
+    private float inactivityLimit = 5f; // 5 seconds inactivity limit
     void Start()
     {
-
+        // Set initial animation state to idle
+        _animator.SetBool("Idle", true);
+        _animator.SetBool("Running", false);
+        _animator.SetBool("Walking", false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
+        PlayerMove();
+        TrackInactivity();
     }
-    public void PlayerMove1()
+
+    private void PlayerMove()
     {
+        // Get joystick input values
         float hoz = joystick.Horizontal;
         float ver = joystick.Vertical;
-        moveDirection = new Vector3(joystick.Direction.x, 0, joystick.Direction.y);
 
-        _characterController.SimpleMove(moveDirection * moveSpeed);
+        // Check if there's any joystick input (movement)
+        isMoving = Mathf.Abs(hoz) > 0.15f || Mathf.Abs(ver) > 0.15f;
 
-        targetDirection = Vector3.RotateTowards(_characterController.transform.forward,
-        moveDirection, rotationSpeed * Time.fixedDeltaTime, 0.0f);
+        if (isMoving)
+        {
+            // Reset the inactivity timer since the player is active
+            inactivityTimer = 0f;
 
-        _characterController.transform.rotation = Quaternion.LookRotation(targetDirection);
+            // Deactivate the Finger GameObject
+            if (Finger.activeSelf)
+            {
+                Finger.SetActive(false);
+            }
 
-        float currentSpeed = _characterController.velocity.magnitude / moveSpeed;
+            // Calculate movement direction based on joystick input
+            moveDirection = new Vector3(hoz, 0, ver).normalized;
 
-        if (moveDirection.sqrMagnitude <= 0)
+            // Move the character
+            _characterController.SimpleMove(moveDirection * moveSpeed);
+
+            // Rotate the character smoothly towards the movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            _characterController.transform.rotation = Quaternion.Slerp(
+                _characterController.transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime
+            );
+        }
+        else
+        {
+            // Stop the character immediately if no joystick input
+            moveDirection = Vector3.zero;
+            _characterController.SimpleMove(Vector3.zero);
+        }
+
+        UpdateAnimations();
+    }
+
+    private void UpdateAnimations()
+    {
+        if (!isMoving) // No movement input
         {
             _animator.SetBool("Running", false);
             _animator.SetBool("Walking", false);
             _animator.SetBool("Idle", true);
         }
-        else
+        else // Movement input detected
         {
-            bool isRunning = _animator.GetCurrentAnimatorStateInfo(0).IsName("RunForward");
-            if (currentSpeed >= 0.5f)
+            _animator.SetBool("Idle", false);
+
+            // Determine if the player is running or walking based on moveSpeed
+            float currentSpeed = _characterController.velocity.magnitude / moveSpeed;
+
+            if (currentSpeed >= 0.5f) // Running threshold
             {
-                _animator.SetBool("Idle", false);
                 _animator.SetBool("Walking", false);
                 _animator.SetBool("Running", true);
                 _animator.SetFloat("RunSpeed", currentSpeed);
-
             }
-            else if (moveDirection.sqrMagnitude != 0 || currentSpeed <= 0.5)
+            else // Walking animation if below running threshold
             {
-
                 _animator.SetBool("Running", false);
-                _animator.SetBool("Idle", false);
                 _animator.SetBool("Walking", true);
                 _animator.SetFloat("WalkSpeed", walkspeed);
-
             }
+        }
+    }
+
+    private void TrackInactivity()
+    {
+        // Increment inactivity timer
+        inactivityTimer += Time.deltaTime;
+
+        // If 5 seconds pass with no interaction, reactivate the Finger GameObject
+        if (inactivityTimer >= inactivityLimit && !Finger.activeSelf)
+        {
+            Finger.SetActive(true);
         }
     }
 
@@ -86,5 +126,4 @@ public class BaseCharControl : MonoBehaviour
     {
         _animator.SetBool("Carry", isCarry);
     }
-
 }
