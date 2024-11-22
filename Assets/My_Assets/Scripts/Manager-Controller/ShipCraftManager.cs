@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ShipCraftManager : MonoBehaviour
 {
-    [SerializeField] private PlayerStackController _PlayerStack;
-    [SerializeField] private ShipItemDropCollider _ShipItemDropCollider;
+
     [SerializeField] private StoreShelfController _StoreShelfController;
     [SerializeField] private DissolveObject _dissolve;
 
@@ -40,6 +39,11 @@ public class ShipCraftManager : MonoBehaviour
         {
             if (effect != null)
                 effect.SetActive(false);
+        }
+        if (IsCraftProcessReady && !isCraftingInProgress && _StoreShelfController != null && _StoreShelfController.inActiveItems.Length > 0)
+        {
+            Debug.Log("All items are already collected at start. Starting ShipCraftSequence.");
+            StartCoroutine(ShipCraftSequence()); // Start crafting if all conditions are met
         }
     }
     private bool isCraftingInProgress = false;

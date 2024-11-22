@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 2ae2d3eb4a892f07cad17110aac8ca30
+  - 0d2190d56c33a9fd466b592ec8fb04a9
   appIds:
-  - 1270242107353629
+  - 1733298074180665
   appLabels:
   - MarsGame
   cookie: 1

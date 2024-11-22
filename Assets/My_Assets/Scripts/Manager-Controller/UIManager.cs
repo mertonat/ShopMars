@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.SetInt("HasRunBefore", 1); // Set the flag to indicate this has run
             PlayerPrefs.Save(); // Save changes to PlayerPrefs
         }
-        //SaveMoney(800);
+        SaveMoney(8000);
     }
     // Start is called before the first frame update
     void Start()
